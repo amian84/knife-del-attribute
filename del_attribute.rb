@@ -21,7 +21,6 @@ class DelAttribute < Chef::Knife
         end
         @node = Chef::Node.load(@nodename)
         if recursive
-          puts 'entra'
           slices = attribute_arg.split('.')
           @node.normal.delete(slices[0])
         else
