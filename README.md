@@ -7,9 +7,9 @@ A plugin for Chef::Knife which will delete normal attributes of your nodes.
 Supply nested attributes and the 'recursive' token if you like a recursive delete.
 
 ```
-% knife set_attribute node_name attribute.sub_attribute recursive
+% knife del_attribute node_name attribute.sub_attribute recursive
 
-% knife set_attribute node_name attribute.sub_attribute 
+% knife del_attribute node_name attribute.sub_attribute 
 
 ```
 
