@@ -27,7 +27,7 @@ class DelAttribute < Chef::Knife
           slices = attribute_arg.split('.')
           last = slices.pop
           parts = slices
-          hash = parts.inject(@node) { |h,attr| h[attr].nil? ? (puts h.inspect;puts attr;h[attr]={};h[attr]) : h[attr]}
+          hash = parts.inject(@node) { |h,attr| !h.has_key?(attr) ? (puts h.inspect;puts attr;h[attr]={};h[attr]) : h[attr]}
 
           hash.delete(last)
         end
